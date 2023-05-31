@@ -74,6 +74,7 @@ cmd + shift - down : yabai -m window --warp south
 cmd + shift - up : yabai -m window --warp north
 cmd + shift - right : yabai -m window --warp east
 
+
 # send window to space 
 cmd + shift - x : yabai -m window --space recent
 cmd + shift - 1 : yabai -m window --space 1

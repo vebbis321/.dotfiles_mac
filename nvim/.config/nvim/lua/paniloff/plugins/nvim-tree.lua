@@ -13,9 +13,11 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 -- configure nvim-tree
 nvimtree.setup({
-  -- change folder arrow icons
+   view = {
+    width = 50,
+  },
   renderer = {
-    icons = {
+    icons = {  -- change folder arrow icons
       glyphs = {
         folder = {
           arrow_closed = "", -- arrow when folder is closed
