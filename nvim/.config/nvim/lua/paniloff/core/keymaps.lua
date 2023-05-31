@@ -23,6 +23,11 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- save
+keymap.set("n", "<c-s>", ":w<CR>") -- normal mode
+keymap.set("i", "<c-s>", "<ESC>:w<CR>l") -- insert mode
+keymap.set("v", "<c-s>", "<ESC>:w<CR>") -- normal mode
+
 -- greatest remap ever
 -- foo bar
 keymap.set("x", "<leader>p", "\"dP")
