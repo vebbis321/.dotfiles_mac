@@ -66,6 +66,7 @@ return packer.startup(function(use)
   -- statusline
   use("nvim-lualine/lualine.nvim")
 
+
   -- terminal
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
       require("toggleterm").setup()
