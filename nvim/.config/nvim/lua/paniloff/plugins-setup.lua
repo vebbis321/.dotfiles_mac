@@ -34,11 +34,11 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
    -- fuzzy finding w/ telescope
-  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+
   use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.1',
-      -- or                            , branch = '0.1.x',
-      requires = { {'nvim-lua/plenary.nvim'} }
+	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  -- or                            , branch = '0.1.x',
+	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { "catppuccin/nvim", as = "catppuccin" }
 
@@ -149,7 +149,7 @@ return packer.startup(function(use)
                    --- horizontal toggle log buffer
                    toggle_split_log_buffer = "<leader>ls",
                    --- vertical toggle log buffer
-                   toggle_vsplit_log_buffer = "<leader>lv", 
+                   toggle_vsplit_log_buffer = "<leader>lv",
                },
            })
        end
