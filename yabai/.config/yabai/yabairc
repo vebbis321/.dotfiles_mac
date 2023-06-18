@@ -43,6 +43,7 @@ yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
 yabai -m rule --add label="Software Update" title="Software Update" manage=off
 yabai -m rule --add label="VirtualBox" title="VirtualBox" manage=off
 yabai -m rule --add label="VirtualBox VM" title="VirtualBox VM" manage=off
+yabai -m rule --add app="^Simulator$" manage=off
 
 
 echo "yabai: configuration loaded...\\n"

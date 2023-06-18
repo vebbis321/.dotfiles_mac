@@ -16,7 +16,7 @@ cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 
 # === launch commands ===
 # Open iterm2.
-cmd - return : osascript /Users/vebjorndaniloff/Library/Scripts/new-iterm-window.scpt
+cmd - return : osascript /Users/vebdan/Library/Scripts/open_iterm2_window.scpt
 
 # open firefox
 cmd + shift - return : open -na /Applications/Brave\ Browser.app/
@@ -29,6 +29,7 @@ hyper - c : open "x-apple.systempreferences:"
 
 # === Resize Mode ===
 # Set resize border color 
+#
 :: resize @ : yabai -m config active_window_border_color 0xFFFF00FF
 # toggle resize mode 
 resize < hyper - r ; default
