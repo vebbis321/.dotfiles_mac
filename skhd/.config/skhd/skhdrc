@@ -15,8 +15,8 @@ cmd + shift - b : osascript -e 'tell app "System Events" to restart'
 cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 
 # === launch commands ===
-# Open iterm2.
-cmd - return : osascript ~/Library/Scripts/open_iterm2_window.scpt
+# Open iterm2
+cmd - return : osascript /Library/Scripts/open_iterm2_window.scpt
 
 # open firefox
 cmd + shift - return : open -na /Applications/Brave\ Browser.app/
