@@ -155,6 +155,24 @@ return packer.startup(function(use)
        end
    }
 
+ use {
+    'vimwiki/vimwiki',
+    config = function()
+      vim.g.vimwiki_list = {
+        {
+          path = '~/Documents/wimwiki/',
+          syntax = 'markdown',
+          ext  = '.md',
+        }
+      }
+      vim.g.vimwiki_ext2syntax = {
+        ['.md'] = 'markdown',
+        ['.markdown'] = 'markdown',
+        ['.mdown'] = 'markdown',
+      }
+    end
+  }
+
   if packer_bootstrap then
     require("packer").sync()
   end

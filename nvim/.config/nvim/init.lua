@@ -10,5 +10,3 @@ require("paniloff.plugins.nvim-tree")
 require("paniloff.plugins.lualine")
 require("paniloff.plugins.lsp")
 require("paniloff.plugins.trouble")
-
-
