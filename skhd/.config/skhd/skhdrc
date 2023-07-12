@@ -1,8 +1,7 @@
 # === Session defaults ===
 # reset border color in default mode
 :: default : yabai -m config active_window_border_color 0xE0ffffff
-# kickstart yabai 
-hyper - y : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+#
 # lock screen immediately
 cmd - escape : pmset displaysleepnow 
 # logout
@@ -74,7 +73,6 @@ cmd + shift - left : yabai -m window --warp west
 cmd + shift - down : yabai -m window --warp south
 cmd + shift - up : yabai -m window --warp north
 cmd + shift - right : yabai -m window --warp east
-
 
 # send window to space 
 cmd + shift - x : yabai -m window --space recent

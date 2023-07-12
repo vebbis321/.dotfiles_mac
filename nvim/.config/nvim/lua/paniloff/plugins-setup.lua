@@ -41,10 +41,16 @@ return packer.startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { "catppuccin/nvim", as = "catppuccin" }
+  use { "rebelot/kanagawa.nvim", as = "kanagawa" }
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('theprimeagen/harpoon')
 
+  use({ "andrewferrier/wrapping.nvim",
+      config = function()
+        require("wrapping").setup()
+    end,
+  })
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
   use("szw/vim-maximizer") -- maximizes and restores current window
 
@@ -155,7 +161,7 @@ return packer.startup(function(use)
        end
    }
 
- use {
+   use {
     'vimwiki/vimwiki',
     config = function()
       vim.g.vimwiki_list = {
@@ -172,6 +178,16 @@ return packer.startup(function(use)
       }
     end
   }
+
+    use({
+        "Pocco81/auto-save.nvim",
+        config = function()
+             require("auto-save").setup {
+                -- your config goes here
+                -- or just leave it empty :)
+             }
+        end,
+    })
 
   if packer_bootstrap then
     require("packer").sync()

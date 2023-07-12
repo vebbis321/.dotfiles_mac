@@ -34,10 +34,14 @@ opt.clipboard:append("unnamedplus")
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.colorcolumn = "80"
+opt.textwidth = 78
 opt.cursorline = true
 
 opt.scrolloff = 8
 opt.isfname:append("@-@")
 opt.updatetime = 50
+
+opt.spelllang = 'en_us'
+opt.spell = true
 
 vim.g.mapleader = " "
