@@ -30,7 +30,7 @@ keymap.set("v", "<c-s>", "<ESC>:w<CR>") -- normal mode
 
 -- greatest remap ever
 -- foo bar
-keymap.set("x", "<leader>p", "\"dP")
+keymap.set("x", "<leader>p", "\"_dP")
 
 -- yank into buffer
 keymap.set({"n", "v"}, "<leader>y", [["+y]])

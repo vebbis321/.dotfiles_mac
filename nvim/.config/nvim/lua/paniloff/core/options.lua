@@ -22,7 +22,7 @@ opt.incsearch = true
 opt.swapfile = false
 opt.backup = false
 opt.undofile = true
---opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- backspace
 opt.backspace = "indent,eol,start"
@@ -43,5 +43,6 @@ opt.updatetime = 50
 
 opt.spelllang = 'en_us'
 opt.spell = true
+opt.showcmd = true
 
 vim.g.mapleader = " "

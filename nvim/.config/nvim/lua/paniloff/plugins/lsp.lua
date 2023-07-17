@@ -10,7 +10,9 @@ lsp.ensure_installed({
 
 local lsp_config = require('lspconfig')
 lsp_config.sourcekit.setup{
-    root_dir = lsp_config.util.root_pattern("Package.swift", ".git", "*.xcodeproj")
+    cmd = { "sourcekit-lsp" },
+    root_dir = lsp_config.util.root_pattern("Package.swift", ".git", "*.xcodeproj"),
+    filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" }
 }
 
 -- Fix Undefined global 'vim'

@@ -1,7 +1,6 @@
 # === Session defaults ===
 # reset border color in default mode
 :: default : yabai -m config active_window_border_color 0xE0ffffff
-#
 # lock screen immediately
 cmd - escape : pmset displaysleepnow 
 # logout
