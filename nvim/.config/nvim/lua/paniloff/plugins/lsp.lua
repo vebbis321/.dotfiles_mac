@@ -3,12 +3,14 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'clangd',
-  'pyright',
-  'lua_ls',
+    'clangd',
+    'pyright',
+    'lua_ls',
+    'marksman'
 })
 
 local lsp_config = require('lspconfig')
+
 lsp_config.sourcekit.setup{
     cmd = { "sourcekit-lsp" },
     root_dir = lsp_config.util.root_pattern("Package.swift", ".git", "*.xcodeproj"),

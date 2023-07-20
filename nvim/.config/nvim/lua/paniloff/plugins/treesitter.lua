@@ -11,6 +11,7 @@ require'nvim-treesitter.configs'.setup {
       "vim",
       "vimdoc",
       "query",
+      "markdown",
       "markdown_inline",
       "gitignore",
       "json"
