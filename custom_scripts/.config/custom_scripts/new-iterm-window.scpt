@@ -1,10 +1,8 @@
-#!/usr/bin/env bash
-
-set -e
-
-osascript - <<EOF
-tell application "iTerm2"
-    activate
-    create window with default profile
-end tell
-EOF
+if application "iTerm" is not running then
+    activate application "iTerm"
+else
+    tell application "iTerm"
+        create window with default profile
+        activate
+    end tell
+end if
