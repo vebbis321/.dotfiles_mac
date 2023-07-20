@@ -16,7 +16,7 @@ cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 # Open iterm2
 cmd - return : osascript ~/.config/custom_scripts/new-iterm-window.scpt
 
-# open firefox
+# open brave
 cmd + shift - return : open -na /Applications/Brave\ Browser.app/
 
 # open vscode
