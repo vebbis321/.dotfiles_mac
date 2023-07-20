@@ -84,6 +84,18 @@ _G.packer_plugins = {
     path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["alpha-nvim"] = {
+    config = { "\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0" },
+    loaded = true,
+    path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
+  ["auto-save.nvim"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14auto-save\frequire\0" },
+    loaded = true,
+    path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
+    url = "https://github.com/Pocco81/auto-save.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -124,6 +136,11 @@ _G.packer_plugins = {
     path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  kanagawa = {
+    loaded = true,
+    path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/kanagawa",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -133,6 +150,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -216,8 +238,19 @@ _G.packer_plugins = {
     path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
   },
+  vimwiki = {
+    config = { "\27LJ\2\n�\1\0\0\3\0\6\0\v6\0\0\0009\0\1\0004\1\3\0005\2\3\0>\2\1\1=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\0\3\b.md\rmarkdown\v.mdown\rmarkdown\14.markdown\rmarkdown\23vimwiki_ext2syntax\1\0\3\bext\b.md\tpath\25~/Documents/wimwiki/\vsyntax\rmarkdown\17vimwiki_list\6g\bvim\0" },
+    loaded = true,
+    path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
+  },
+  ["wrapping.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rwrapping\frequire\0" },
+    loaded = true,
+    path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/wrapping.nvim",
+    url = "https://github.com/andrewferrier/wrapping.nvim"
+  },
   xbase = {
-    config = { "\27LJ\2\n�\4\0\0\5\0\28\0 6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\a\0006\3\3\0009\3\4\0039\3\5\0039\3\6\3=\3\b\0025\3\t\0=\3\n\0024\3\0\0=\3\v\0025\3\r\0005\4\f\0=\4\14\0035\4\15\0=\4\16\0035\4\17\0=\4\18\0035\4\19\0=\4\20\3=\3\21\0025\3\23\0005\4\22\0=\4\24\3=\3\25\0025\3\26\0=\3\27\2B\0\2\1K\0\1\0\rmappings\1\0\a\17build_picker\14<leader>b\venable\2\15all_picker\15<leader>ef\28toggle_split_log_buffer\15<leader>ls\17watch_picker\14<leader>s\29toggle_vsplit_log_buffer\15<leader>lv\15run_picker\14<leader>r\vsimctl\biOS\1\0\0\1\2\0\0\14iPhone 14\15statusline\ffailure\1\0\2\ncolor\f#db4b4b\ticon\b\fsuccess\1\0\2\ncolor\f#1abc9c\ticon\b\19device_running\1\0\2\ncolor\f#4a6edb\ticon\b\rwatching\1\0\0\1\0\2\ncolor\f#1abc9c\ticon\b\14sourcekit\15log_buffer\1\0\2\22default_direction\15horizontal\nfocus\1\14log_level\1\0\0\tINFO\vlevels\blog\bvim\nsetup\nxbase\frequire\0" },
     loaded = true,
     path = "/Users/vebdan/.local/share/nvim/site/pack/packer/start/xbase",
     url = "https://github.com/xbase-lab/xbase"
@@ -225,18 +258,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: xbase
-time([[Config for xbase]], true)
-try_loadstring("\27LJ\2\n�\4\0\0\5\0\28\0 6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\a\0006\3\3\0009\3\4\0039\3\5\0039\3\6\3=\3\b\0025\3\t\0=\3\n\0024\3\0\0=\3\v\0025\3\r\0005\4\f\0=\4\14\0035\4\15\0=\4\16\0035\4\17\0=\4\18\0035\4\19\0=\4\20\3=\3\21\0025\3\23\0005\4\22\0=\4\24\3=\3\25\0025\3\26\0=\3\27\2B\0\2\1K\0\1\0\rmappings\1\0\a\17build_picker\14<leader>b\venable\2\15all_picker\15<leader>ef\28toggle_split_log_buffer\15<leader>ls\17watch_picker\14<leader>s\29toggle_vsplit_log_buffer\15<leader>lv\15run_picker\14<leader>r\vsimctl\biOS\1\0\0\1\2\0\0\14iPhone 14\15statusline\ffailure\1\0\2\ncolor\f#db4b4b\ticon\b\fsuccess\1\0\2\ncolor\f#1abc9c\ticon\b\19device_running\1\0\2\ncolor\f#4a6edb\ticon\b\rwatching\1\0\0\1\0\2\ncolor\f#1abc9c\ticon\b\14sourcekit\15log_buffer\1\0\2\22default_direction\15horizontal\nfocus\1\14log_level\1\0\0\tINFO\vlevels\blog\bvim\nsetup\nxbase\frequire\0", "config", "xbase")
-time([[Config for xbase]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: wrapping.nvim
+time([[Config for wrapping.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rwrapping\frequire\0", "config", "wrapping.nvim")
+time([[Config for wrapping.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\nC\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
+-- Config for: auto-save.nvim
+time([[Config for auto-save.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
+time([[Config for auto-save.nvim]], false)
+-- Config for: vimwiki
+time([[Config for vimwiki]], true)
+try_loadstring("\27LJ\2\n�\1\0\0\3\0\6\0\v6\0\0\0009\0\1\0004\1\3\0005\2\3\0>\2\1\1=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\0\3\b.md\rmarkdown\v.mdown\rmarkdown\14.markdown\rmarkdown\23vimwiki_ext2syntax\1\0\3\bext\b.md\tpath\25~/Documents/wimwiki/\vsyntax\rmarkdown\17vimwiki_list\6g\bvim\0", "config", "vimwiki")
+time([[Config for vimwiki]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
