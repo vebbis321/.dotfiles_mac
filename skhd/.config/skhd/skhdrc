@@ -1,16 +1,18 @@
 # === Session defaults ===
 # reset border color in default mode
 :: default : yabai -m config active_window_border_color 0xE0ffffff
+# kickstart yabai 
+hyper - y : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 # lock screen immediately
-cmd - escape : pmset displaysleepnow 
+#cmd - escape : pmset displaysleepnow 
 # logout
-cmd + shift - e : osascript -e 'tell app "System Events" to log out'
+#cmd + shift - e : osascript -e 'tell app "System Events" to log out'
 # power down 
-cmd + shift - p : osascript -e 'tell app "System Events" to shut down'
+#cmd + shift - p : osascript -e 'tell app "System Events" to shut down'
 # reboot
-cmd + shift - b : osascript -e 'tell app "System Events" to restart'
+#cmd + shift - b : osascript -e 'tell app "System Events" to restart'
 # sleep 
-cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
+#cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 
 # === launch commands ===
 # Open iterm2
@@ -54,12 +56,6 @@ cmd - down : yabai -m window --focus south
 cmd - up : yabai -m window --focus north
 cmd - right : yabai -m window --focus east
 
-# create a space
-hyper - n : yabai -m space --create; \
-		sketchybar --update
-
-# destroy current space
-hyper - d : yabai -m space --destroy
 
 # === Modification === 
 # Move window relatively
@@ -74,7 +70,6 @@ cmd + shift - up : yabai -m window --warp north
 cmd + shift - right : yabai -m window --warp east
 
 # send window to space 
-cmd + shift - x : yabai -m window --space recent
 cmd + shift - 1 : yabai -m window --space 1
 cmd + shift - 2 : yabai -m window --space 2
 cmd + shift - 3 : yabai -m window --space 3
@@ -84,28 +79,8 @@ cmd + shift - 6 : yabai -m window --space 6
 cmd + shift - 7 : yabai -m window --space 7
 cmd + shift - 8 : yabai -m window --space 8
 
-# Move focus + window to space
-cmd + ctrl - m : yabai -m window --space last; yabai -m space --focus last
-cmd + ctrl - p : yabai -m window --space prev; yabai -m space --focus prev
-cmd + ctrl - n : yabai -m window --space next; yabai -m space --focus next
-cmd + ctrl - 1 : yabai -m window --space 1; yabai -m space --focus 1
-cmd + ctrl - 2 : yabai -m window --space 2; yabai -m space --focus 2
-cmd + ctrl - 3 : yabai -m window --space 3; yabai -m space --focus 3
-cmd + ctrl - 4 : yabai -m window --space 4; yabai -m space --focus 4
-
 # Equalize size of windows
 hyper - e : yabai -m space --balance
-
-# Enable / Disable gaps in current workspace
-lcmd - i : yabai -m space --toggle padding; \
-	  yabai -m space --toggle gap; \
-	  yabai -m config external_bar off:0:0; \
-	  sketchybar --bar hidden=true;
-
-rcmd - i : yabai -m space --toggle padding; \
-	 yabai -m space --toggle gap; \
-	 yabai -m config external_bar all:30:0;\
-	 sketchybar --bar hidden=false;
 
 # Rotate windows clockwise and anticlockwise
 alt - r         : yabai -m space --rotate 270

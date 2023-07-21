@@ -36,6 +36,7 @@ opt.signcolumn = "yes"
 opt.colorcolumn = "80"
 opt.textwidth = 78
 opt.cursorline = true
+opt.background = "dark"
 
 opt.scrolloff = 8
 opt.isfname:append("@-@")

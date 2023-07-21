@@ -34,16 +34,13 @@ return packer.startup(function(use)
     use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
     -- fuzzy finding w/ telescope
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+
+    -- color
     use { "rebelot/kanagawa.nvim", as = "kanagawa" }
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use('theprimeagen/harpoon')
 
     use({ "andrewferrier/wrapping.nvim",
         config = function()
@@ -53,11 +50,8 @@ return packer.startup(function(use)
     use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
     use("szw/vim-maximizer") -- maximizes and restores current window
 
-    use("mbbill/undotree") -- git undoo
-    use("tpope/vim-fugitive") -- git wrapper 
-
     -- use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
-    -- use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
+    -- use("inkarkat/vim-ReplaceWithRegister") -- replace with register co  ntents using motion (gr + motion)
 
     -- commenting with gc
     use("numToStr/Comment.nvim")
@@ -71,46 +65,38 @@ return packer.startup(function(use)
     -- statusline
     use("nvim-lualine/lualine.nvim")
 
+    -- autocompletion
+    use("hrsh7th/nvim-cmp") -- completion plugin
+    use("hrsh7th/cmp-buffer") -- source for text in buffer
+    use("hrsh7th/cmp-path") -- source for file system paths
 
-    -- terminal
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-    end}
+    -- snippets
+    use("L3MON4D3/LuaSnip") -- snippet engine
+    use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+    use("rafamadriz/friendly-snippets") -- useful snippets
 
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+    -- managing & installing lsp servers, linters & formatters
+    use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
+    use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
-
-            -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
-        }
-    }
-
+    -- configuring lsp servers
+    use("neovim/nvim-lspconfig") -- easily configure language servers
+    use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
     use({
-        "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup {
-                icons = false,
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    })
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        requires = {
+            { "nvim-tree/nvim-web-devicons" },
+            { "nvim-treesitter/nvim-treesitter" },
+        },
+    }) -- enhanced lsp uis
+    use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+    -- formatting & linting
+    use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+    use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+
+    -- xbase
     use {
         'xbase-lab/xbase',
         run = 'make install', -- or "make install && make free_space" (not recommended, longer build time)
@@ -122,6 +108,7 @@ return packer.startup(function(use)
         }
     }
 
+    -- wimwiki
     use {
         'vimwiki/vimwiki',
         config = function()
@@ -140,6 +127,7 @@ return packer.startup(function(use)
         end
     }
 
+    -- auto-save
     use({
         "Pocco81/auto-save.nvim",
         config = function()
@@ -150,11 +138,13 @@ return packer.startup(function(use)
         end,
     })
 
+    -- preview
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
+    -- dashboard
     use {
     'goolord/alpha-nvim',
     config = function ()
