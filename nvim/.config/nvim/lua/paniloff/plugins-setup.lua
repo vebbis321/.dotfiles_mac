@@ -51,16 +51,8 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
+	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 	-- use("inkarkat/vim-ReplaceWithRegister") -- replace with register co  ntents using motion (gr + motion)
-	use({
-		"kylechui/nvim-surround",
-		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
-	})
 
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
