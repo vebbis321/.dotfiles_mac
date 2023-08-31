@@ -95,7 +95,20 @@ return packer.startup(function(use)
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+
+	use({
+		"folke/trouble.nvim",
+		config = function()
+			require("trouble").setup({
+				icons = true,
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 
 	-- xbase
 	use({
@@ -109,34 +122,26 @@ return packer.startup(function(use)
 		},
 	})
 
-	-- wimwiki
+	-- neorg
 	use({
-		"vimwiki/vimwiki",
+		"nvim-neorg/neorg",
 		config = function()
-			vim.g.vimwiki_list = {
-				{
-					path = "~/Documents/wimwiki/",
-					syntax = "markdown",
-					ext = ".md",
+			require("neorg").setup({
+				load = {
+					["core.defaults"] = {}, -- Loads default behaviour
+					["core.concealer"] = {}, -- Adds pretty icons to your documents
+					["core.dirman"] = { -- Manages Neorg workspaces
+						config = {
+							workspaces = {
+								notes = "~/Documents/MyNotes",
+							},
+						},
+					},
 				},
-			}
-			vim.g.vimwiki_ext2syntax = {
-				[".md"] = "markdown",
-				[".markdown"] = "markdown",
-				[".mdown"] = "markdown",
-			}
-		end,
-	})
-
-	-- auto-save
-	use({
-		"Pocco81/auto-save.nvim",
-		config = function()
-			require("auto-save").setup({
-				-- your config goes here
-				-- or just leave it empty :)
 			})
 		end,
+		run = ":Neorg sync-parsers",
+		requires = "nvim-lua/plenary.nvim",
 	})
 
 	-- preview
