@@ -120,28 +120,18 @@ return packer.startup(function(use)
 			"nvim-lua/plenary.nvim", -- optional/requirement of telescope.nvim
 			-- "stevearc/dressing.nvim", -- optional (in case you don't use telescope but something else)
 		},
-	})
-
-	-- neorg
-	use({
-		"nvim-neorg/neorg",
 		config = function()
-			require("neorg").setup({
-				load = {
-					["core.defaults"] = {}, -- Loads default behaviour
-					["core.concealer"] = {}, -- Adds pretty icons to your documents
-					["core.dirman"] = { -- Manages Neorg workspaces
-						config = {
-							workspaces = {
-								notes = "~/Documents/MyNotes",
-							},
-						},
+			require("lspconfig").sourcekit.setup({})
+			require("xbase").setup({
+				log_level = vim.log.levels.DEBUG,
+				simctl = {
+					iOS = {
+						"iPhone 14 Pro",
+						"iPhone 14",
 					},
 				},
 			})
 		end,
-		run = ":Neorg sync-parsers",
-		requires = "nvim-lua/plenary.nvim",
 	})
 
 	-- preview

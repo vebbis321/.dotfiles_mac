@@ -71,16 +71,23 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
-lspconfig["clangd"].setup({})
+lspconfig["clangd"].setup({
+	on_attach = on_attach,
+	capabilities = cmp_nvim_lsp.default_capabilities(),
+	cmd = {
+		"clangd",
+		"--offset-encoding=utf-16",
+	},
+})
 
 lspconfig["ltex"].setup({
-	cmd = { "ltex-ls" },
 	on_attach = on_attach,
-	filetypes = { "markdown" },
-	flags = { debounce_text_changes = 300 },
 	settings = {
 		ltex = {
 			language = "en-US",
+			--	additionalRules = {
+			--		languageModel = "~/ngrams/",
+			--	},
 		},
 	},
 })
