@@ -30,16 +30,16 @@ keymap.set("v", "<c-s>", "<ESC>:w<CR>") -- normal mode
 
 -- greatest remap ever
 -- foo bar
-keymap.set("x", "<leader>p", "\"_dP")
+keymap.set("x", "<leader>p", '"_dP')
 
 -- yank into buffer
-keymap.set({"n", "v"}, "<leader>y", [["+y]])
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
-keymap.set({"n", "v"}, "<leader>d", [["_d]])
+keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- delete to void register
-keymap.set("n", "<leader>d", "\"_d")
-keymap.set("v", "<leader>d", "\"_d")
+keymap.set("n", "<leader>d", '"_d')
+keymap.set("v", "<leader>d", '"_d')
 
 -- nope
 keymap.set("n", "Q", "<nop>")
