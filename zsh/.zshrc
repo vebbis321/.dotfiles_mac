@@ -40,3 +40,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
