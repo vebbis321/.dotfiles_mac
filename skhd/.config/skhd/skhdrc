@@ -17,6 +17,7 @@ hyper - y : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 # === launch commands ===
 # Open iterm2
 cmd - return : osascript ~/.config/custom_scripts/new-iterm-window.scpt
+cmd - space : (LABEL=$(uuidgen) && yabai -m signal --add event="window_created" label="$LABEL" app="^Alacritty$" action="yabai -m window \$YABAI_WINDOW_ID --focus && yabai -m signal --remove $LABEL") && (/Applications/Alacritty.app/Contents/MacOS/alacritty msg create-window || open -na /Applications/Alacritty.app)
 
 # open brave
 cmd + shift - return : open -na /Applications/Brave\ Browser.app/
