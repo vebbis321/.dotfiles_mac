@@ -18,6 +18,9 @@ hyper - y : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 # Open iterm2
 cmd - space : (LABEL=$(uuidgen) && yabai -m signal --add event="window_created" label="$LABEL" app="^Alacritty$" action="yabai -m window \$YABAI_WINDOW_ID --focus && yabai -m signal --remove $LABEL") && (/Applications/Alacritty.app/Contents/MacOS/alacritty msg create-window || open -na /Applications/Alacritty.app)
 
+# close window
+cmd + shift - q : osascript -e 'tell application "System Events" to perform action "AXPress" of (first button whose subrole is "AXCloseButton") of (first window whose subrole is "AXStandardWindow") of (first process whose frontmost is true)'
+
 # open brave
 cmd + shift - space : open -na /Applications/Brave\ Browser.app/
 
