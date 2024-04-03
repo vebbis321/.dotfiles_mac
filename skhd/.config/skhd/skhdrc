@@ -1,8 +1,6 @@
 # === Session defaults ===
 # reset border color in default mode
 :: default : yabai -m config active_window_border_color 0xE0ffffff
-# kickstart yabai 
-hyper - y : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 # lock screen immediately
 #cmd - escape : pmset displaysleepnow 
 # logout
@@ -15,7 +13,7 @@ hyper - y : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 #cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 
 # === launch commands ===
-# Open iterm2
+# Open alacritty
 cmd - space : (LABEL=$(uuidgen) && yabai -m signal --add event="window_created" label="$LABEL" app="^Alacritty$" action="yabai -m window \$YABAI_WINDOW_ID --focus && yabai -m signal --remove $LABEL") && (/Applications/Alacritty.app/Contents/MacOS/alacritty msg create-window || open -na /Applications/Alacritty.app)
 
 # close window
@@ -35,8 +33,8 @@ hyper - c : open "x-apple.systempreferences:"
 #
 :: resize @ : yabai -m config active_window_border_color 0xFFFF00FF
 # toggle resize mode 
-resize < hyper - r ; default
-default < hyper - r ; resize
+resize < cmd - r ; default
+default < cmd - r ; resize
 # resize commands
 resize < h : yabai -m window --resize left:-50:0; \
                   yabai -m window --resize right:-50:0
@@ -54,23 +52,12 @@ cmd - j : yabai -m window --focus south
 cmd - k : yabai -m window --focus north
 cmd - l : yabai -m window --focus east
 
-cmd - left : yabai -m window --focus west
-cmd - down : yabai -m window --focus south
-cmd - up : yabai -m window --focus north
-cmd - right : yabai -m window --focus east
-
-
 # === Modification === 
 # Move window relatively
 cmd + shift - h : yabai -m window --warp west
 cmd + shift - j : yabai -m window --warp south
 cmd + shift - k : yabai -m window --warp north
 cmd + shift - l : yabai -m window --warp east
-
-cmd + shift - left : yabai -m window --warp west
-cmd + shift - down : yabai -m window --warp south
-cmd + shift - up : yabai -m window --warp north
-cmd + shift - right : yabai -m window --warp east
 
 # send window to space 
 cmd + shift - 1 : yabai -m window --space 1
@@ -82,28 +69,8 @@ cmd + shift - 6 : yabai -m window --space 6
 cmd + shift - 7 : yabai -m window --space 7
 cmd + shift - 8 : yabai -m window --space 8
 
-# Equalize size of windows
-hyper - e : yabai -m space --balance
-
-# Rotate windows clockwise and anticlockwise
-alt - r         : yabai -m space --rotate 270
-shift + alt - r : yabai -m space --rotate 90
-
-# Rotate on X and Y Axis
-shift + alt - x : yabai -m space --mirror x-axis
-shift + alt - y : yabai -m space --mirror y-axis
-
-# Set insertion point for focused container
-shift + lctrl + alt - h : yabai -m window --insert west
-shift + lctrl + alt - j : yabai -m window --insert south
-shift + lctrl + alt - k : yabai -m window --insert north
-shift + lctrl + alt - l : yabai -m window --insert east
-
-# Float / Unfloat window
-shift + alt - space : \
-    yabai -m window --toggle float; \
-    yabai -m window --toggle border
-
 # Make window native fullscreen
-alt - f         : yabai -m window --toggle zoom-fullscreen
-shift + alt - f : yabai -m window --toggle native-fullscreen
+cmd - f : yabai -m window --toggle native-fullscreen
+
+# reload
+cmd + shift - r : skhd --restart-service
