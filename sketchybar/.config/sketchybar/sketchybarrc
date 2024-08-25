@@ -1,42 +1,58 @@
-PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
-ITEM_DIR="$HOME/.config/sketchybar/items"
+#!/bin/bash
 
 source $HOME/.config/sketchybar/colors.sh
 source $HOME/.config/sketchybar/icons.sh
 
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+ITEM_DIR="$HOME/.config/sketchybar/items"
+
 export FONT="Hack Nerd Font"
-export NERD_FONT="Hack Nerd Font"
 
-sketchybar --bar height=30        \
-		 margin=12      \
-		 y_offset=3      \
-		 corner_radius=8 \
-		 blur_radius=50	  \
-                 position=top     \
-                 padding_left=10  \
-                 padding_right=10 \
-                 color=0xff000000 \
-                 shadow=on
+# Setting up the general bar appearance of the bar
+bar=(
+    height=30
+    color=$BLACK
+    shadow=on
+    corner_radius=8
+    position=top
+    padding_right=10
+    padding_left=10
+    y_offset=3
+    margin=12
+    blur_radius=50
+)
 
-sketchybar --default updates=when_shown                       \
-                     drawing=on                               \
-                     icon.font="$NERD_FONT:Regular:14.0"      \
-                     icon.color=0xffff0000                    \
-                     label.font="$FONT:Light:14.0"            \
-                     label.color=0xffffffff                   \
-                     label.padding_left=4                     \
-                     label.padding_right=4                    \
-                     icon.padding_left=4                      \
-                     icon.padding_right=4
+sketchybar --bar "${bar[@]}"
 
+# Setting up default values
+defaults=(
+    updates=when_shown
+    drawing=on
+    icon.font="$FONT:Regular:14.0"
+    icon.color=$RED
+    label.font="$FONT:Light:14.0"
+    label.color=$WHITE
+    label.padding_left=4
+    label.padding_right=4
+    icon.padding_left=4
+    icon.padding_right=4
+)
+
+
+sketchybar --default "${defaults[@]}"
+
+# left
 source $ITEM_DIR/apple.sh
-source $ITEM_DIR/spaces.sh
+# source $ITEM_DIR/aerospace.sh
 source $ITEM_DIR/window_title.sh
+
+# right
 source $ITEM_DIR/clock.sh
 source $ITEM_DIR/cpu.sh
-source $ITEM_DIR/vpn.sh
+source $ITEM_DIR/battery.sh
 source $ITEM_DIR/wifi.sh
 
+sketchybar --hotload on
 
 sketchybar --update
 

@@ -1,10 +1,6 @@
-[[colors.indexed_colors]]
-color = "#b6927b"
-index = 16
-
-[[colors.indexed_colors]]
-color = "#b98d7b"
-index = 17
+[colors.primary]
+background = "#181616"
+foreground = "#c5c9c5"
 
 [colors.normal]
 black = "#0d0c0c"
@@ -16,10 +12,26 @@ red = "#c4746e"
 white = "#C8C093"
 yellow = "#c4b28a"
 
-[colors.primary]
-background = "#181616"
-foreground = "#c5c9c5"
+[colors.bright]
+black = "#a6a69c"
+red = "#E46876"
+green = "#87a987"
+yellow = "#E6C384"
+blue = "#7FB4CA"
+magenta = "#938AA9"
+cyan = "#7AA89F"
+white = "#c5c9c5"
 
 [colors.selection]
 background = "#2D4F67"
 foreground = "#C8C093"
+
+[[colors.indexed_colors]]
+color = "#b6927b"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#b98d7b"
+index = 17
+
+
