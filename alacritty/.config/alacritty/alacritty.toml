@@ -31,6 +31,21 @@ action = "SpawnNewInstance"
 key = "Return"
 mods = "Super|Shift"
 
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
 [scrolling]
 history = 10000
 multiplier = 3

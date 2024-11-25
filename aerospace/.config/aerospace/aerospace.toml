@@ -4,8 +4,8 @@
 # But the feature is very helpful.
 # Normalizations eliminate all sorts of weird tree configurations that don't make sense.
 # Give normalizations a chance and enable them back.
-enable-normalization-flatten-containers = false
-enable-normalization-opposite-orientation-for-nested-containers = false
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
 
 # Start AeroSpace at login
 start-at-login = true
@@ -26,6 +26,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 [mode.main.binding]
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
 cmd-space = 'exec-and-forget /Applications/Alacritty.app/Contents/MacOS/alacritty msg create-window || open -na /Applications/Alacritty.app'
+cmd-shift-space = 'exec-and-forget open -na /Applications/Brave\ Browser.app'
 
 cmd-h = 'focus left'
 cmd-j = 'focus down'
@@ -37,17 +38,9 @@ cmd-shift-j = 'move down'
 cmd-shift-k = 'move up'
 cmd-shift-l = 'move right'
 
-# "|"
-cmd-shift-backslash = 'split horizontal'
-cmd-minus = 'split vertical'
-
 cmd-f = 'fullscreen'
 
 cmd-shift-q = 'close'
-
-cmd-s = 'layout v_accordion' # 'layout stacking' in i3
-cmd-w = 'layout h_accordion' # 'layout tabbed' in i3
-cmd-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
 # Not supported, because this command is redundant in AeroSpace mental model.
 # See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
@@ -84,9 +77,9 @@ cmd-r = 'mode resize'
 3 = "main"
 4 = "main"
 5 = "main"
-6 = "main"
-7 = "main"
-8 = "main"
+6 = "secondary"
+7 = "secondary"
+8 = "secondary"
 
 [mode.resize.binding]
 h = 'resize width -50'
@@ -99,13 +92,20 @@ enter = ['reload-config', 'mode main']
 [gaps]
 inner.horizontal = 10
 inner.vertical =   10
-outer.left =       14
+outer.left =       13
 outer.bottom =     10
-outer.top =        42
-outer.right =      14
+outer.top =        40
+outer.right =      13
 
 ## windows that should float
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
 run = 'layout floating'
 
+# [[on-window-detected]]
+# if.app-id = 'com.apple.QuickTimePlayerX'
+# run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
