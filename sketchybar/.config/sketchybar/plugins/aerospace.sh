@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-# if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-#     sketchybar --set $NAME background.drawing=off
-# else
-#     sketchybar --set $NAME background.drawing=off
-# fi
+# make sure it's executable with:
+# chmod +x ~/.config/sketchybar/plugins/aerospace.sh
+FOC=$(aerospace list-workspaces --focused)
 
+if [ "$1" = $FOC ]; then
+    sketchybar --set $NAME background.drawing=on
+else
+    sketchybar --set $NAME background.drawing=off
+fi

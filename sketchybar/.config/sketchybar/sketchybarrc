@@ -43,7 +43,7 @@ sketchybar --default "${defaults[@]}"
 
 # left
 source $ITEM_DIR/apple.sh
-# source $ITEM_DIR/aerospace.sh
+source $ITEM_DIR/aerospace.sh
 source $ITEM_DIR/window_title.sh
 
 # right

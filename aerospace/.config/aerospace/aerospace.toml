@@ -4,23 +4,22 @@
 # But the feature is very helpful.
 # Normalizations eliminate all sorts of weird tree configurations that don't make sense.
 # Give normalizations a chance and enable them back.
-enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
 
-# Start AeroSpace at login
+automatically-unhide-macos-hidden-apps = true
 start-at-login = true
 
-# Mouse follows focus when focused monitor changes
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 on-focus-changed = "move-mouse window-lazy-center"
 
-after-startup-command = [
-    'exec-and-forget sketchybar --reload',
-]
+# Run Sketchybar together with AeroSpace
+# sketchbar has a built-in detection of already running process,
+# so it won't be run twice on AeroSpace restart
+after-startup-command = ['exec-and-forget sketchybar']
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c',
-    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
 [mode.main.binding]
@@ -41,14 +40,6 @@ cmd-shift-l = 'move right'
 cmd-f = 'fullscreen'
 
 cmd-shift-q = 'close'
-
-# Not supported, because this command is redundant in AeroSpace mental model.
-# See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
-#cmd-space = 'focus toggle_tiling_floating'
-
-# `focus parent`/`focus child` are not yet supported, and it's not clear whether they
-# should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
-# cmd-a = 'focus parent'
 
 cmd-1 = 'workspace 1'
 cmd-2 = 'workspace 2'
@@ -77,17 +68,17 @@ cmd-r = 'mode resize'
 3 = "main"
 4 = "main"
 5 = "main"
-6 = "secondary"
-7 = "secondary"
-8 = "secondary"
+6 = "main"
+7 = "main"
+8 = "main"
 
 [mode.resize.binding]
 h = 'resize width -50'
 j = 'resize height +50'
 k = 'resize height -50'
 l = 'resize width +50'
-enter = ['reload-config', 'mode main']
-
+enter = 'mode main'
+esc = 'mode main'
 
 [gaps]
 inner.horizontal = 10
@@ -106,6 +97,6 @@ run = 'layout floating'
 # if.app-id = 'com.apple.QuickTimePlayerX'
 # run = 'layout floating'
 
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.apple.finder'
+# run = 'layout floating'
