@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-aerospace resize width +50 || resize width -50
-
