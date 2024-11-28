@@ -1,6 +1,6 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
-	url = https://github.com/vebbis321/nvim
+	url = https://github.com/vebbis321/nvim.git
 [submodule "tmux"]
 	path = tmux
 	url = https://github.com/vebbis321/tmux.git
