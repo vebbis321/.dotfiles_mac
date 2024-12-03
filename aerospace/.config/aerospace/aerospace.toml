@@ -24,7 +24,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 
 [mode.main.binding]
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
-cmd-space = 'exec-and-forget /Applications/Alacritty.app/Contents/MacOS/alacritty msg create-window || open -na /Applications/Alacritty.app'
+cmd-space = 'exec-and-forget open -na /Applications/WezTerm.app'
 cmd-shift-space = 'exec-and-forget open -na /Applications/Brave\ Browser.app'
 
 cmd-h = 'focus left'
